@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Скрыть рекламу в Яндексе",
+  "version": "0.1",
+  "description": "Убирает из выдачи публикации с пометкой «Промо» / «Реклама».",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.yandex.ru/*",
+        "*://*.yandex.com/*",
+        "*://*.yandex.by/*",
+        "*://*.yandex.kz/*",
+        "*://ya.ru/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}
