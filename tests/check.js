@@ -21,13 +21,14 @@ const hidden = (id) => {
 const actual = {
   ad1: hidden("ad1"),
   ad2: hidden("ad2"),
+  promoBlock: hidden("promo-block"),
   organic1: hidden("organic1"),
   listUntouched: !doc.getElementById("serp").hasAttribute("data-ad-hidden"),
 };
-const expected = { ad1: true, ad2: true, organic1: false, listUntouched: true };
+const expected = { ad1: true, ad2: true, promoBlock: true, organic1: false, listUntouched: true };
 console.log(JSON.stringify(actual));
 if (JSON.stringify(actual) !== JSON.stringify(expected)) {
   console.log("FAIL: ожидалось", JSON.stringify(expected));
   process.exit(1);
 }
-console.log("OK: реклама скрыта, обычный результат и список на месте");
+console.log("OK: реклама и промо-кнопка скрыты, обычный результат и список на месте");
